@@ -16,10 +16,10 @@ namespace PruebaCI.Controllers.Tests
     {
 
         [TestMethod()]
-        public void ValidarModeloPersona()
+        public void ValidarModeloPersonaEsCorrecto()
         {
             // Arrange            
-            var persona = new Persona() { Nombre = String.Empty };
+            var persona = new Persona() { Nombre = "Emerson", Edad= 27, Correo="emerson@gmail.com" };
 
             // Act
             var context = new ValidationContext(persona, null, null);
@@ -28,7 +28,7 @@ namespace PruebaCI.Controllers.Tests
 
             var isModelStateValid = Validator.TryValidateObject(persona, context, results, true);
             // Assert
-            Assert.IsFalse(isModelStateValid);
+            Assert.IsTrue(isModelStateValid);
         }       
 
     }
