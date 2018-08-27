@@ -19,6 +19,7 @@ namespace PruebaCI.Models
         public string Telefono;
 
         [Display(Name = "Edad")]
+        [Range(18, 60, ErrorMessage = "La edad ingresada debe ser entre 18 y 60")]
         [Required(ErrorMessage = "Debe ingresar edad")]
         public int Edad;
 
