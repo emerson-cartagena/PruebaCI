@@ -19,7 +19,7 @@ namespace PruebaCI.Controllers.Tests
         public void ValidarModeloPersonaEsCorrecto()
         {
             // Arrange            
-            var persona = new Persona() { Nombre = "Emerson", Edad= 18, Correo="emerson@gmail.com" };
+            var persona = new Persona() { Nombre = "Emerson", Edad= 14, Correo="emerson@gmail.com" };
 
             // Act
             var context = new ValidationContext(persona, null, null);
