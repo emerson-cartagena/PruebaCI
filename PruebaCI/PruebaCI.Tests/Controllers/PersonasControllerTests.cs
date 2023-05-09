@@ -19,7 +19,8 @@ namespace PruebaCI.Controllers.Tests
         public void ValidarModeloPersonaEsCorrecto()
         {
             // Arrange            
-            var persona = new Persona() { Nombre = "Emerson", Edad= 30, Correo="emerson@gmail.com" };
+            //var persona = new Persona() { Nombre = "Emerson", Edad= 30, Correo="emerson@gmail.com" };
+            var persona = new Persona() { Nombre = "Emerson", Edad = 40, Correo = "emerson@gmail.com" };
 
             // Act
             var context = new ValidationContext(persona, null, null);
@@ -27,8 +28,10 @@ namespace PruebaCI.Controllers.Tests
             TypeDescriptor.AddProviderTransparent(new AssociatedMetadataTypeTypeDescriptionProvider(typeof(Persona), typeof(PersonaMetadata)), typeof(Persona));
 
             var isModelStateValid = Validator.TryValidateObject(persona, context, results, true);
+
             // Assert
             Assert.IsTrue(isModelStateValid);
+
         }       
 
     }
